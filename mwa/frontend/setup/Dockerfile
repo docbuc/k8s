@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:12-alpine
 RUN apk add --no-cache git
 RUN npm i -g --save vue-cli
 WORKDIR /src

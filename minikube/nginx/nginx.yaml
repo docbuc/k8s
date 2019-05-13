@@ -1,3 +1,4 @@
+# Datei: k8s/minikube/nginx/nginx.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:

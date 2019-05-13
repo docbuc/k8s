@@ -1,16 +1,15 @@
-version: '2'
+# Datei: k8s/grafana/docker-compose.yml
+version: '3'
 services:
   grafana:
-    image: docbuc/grafana
-    build: .
+    image: docbuc/grafana:2
     restart: always
     ports:
       - 3000:3000
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=geheim
   telegraf:
-    image: docbuc/telegraf
-    build: telegraf/
+    image: docbuc/telegraf:2
     restart: always
   influx:
     image: influxdb

@@ -1,4 +1,4 @@
-# Datei: k8s/mwa/docker-compose.yml
+# Datei: k8s/google/docker-compose.yml
 version: '3'
 services:
   mongo1:
@@ -8,9 +8,6 @@ services:
       - mongovol1:/data/db
     ports:
       - 27017
-    deploy:
-      placement:
-        constraints: [node.role == manager]
   mongo2:
     image: mongo:4
     command: --replSet "rs0"
@@ -50,10 +47,7 @@ services:
     ports:
       - "80:8080"
     labels:
-      kompose.service.type: LoadBalancer
-    deploy:
-      placement:
-        constraints: [node.role == manager]
+      kompose.service.type: nodeport
 volumes:
   mongovol1:
   mongovol2:

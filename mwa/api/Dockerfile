@@ -1,4 +1,4 @@
-FROM node:10 as dev
+FROM node:12 as dev
 WORKDIR /src
 RUN chown node:node /src
 USER node
@@ -9,7 +9,7 @@ ENV TZ="Europe/Amsterdam"
 ENTRYPOINT [ "/src/dev-entrypoint.sh" ]
 CMD [ "node_modules/.bin/nodemon", "server.js" ]
 
-FROM node:10-alpine
+FROM node:12-alpine
 WORKDIR /src
 COPY package.json /src/
 RUN npm i --production

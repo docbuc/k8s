@@ -1,4 +1,4 @@
-FROM node:10 as builder
+FROM node:12 as builder
 RUN npm i -g --save vue-cli
 WORKDIR /src/vue
 COPY vue/package* /src/vue/
