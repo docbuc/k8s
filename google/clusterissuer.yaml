@@ -1,6 +1,6 @@
 # Datei: k8s/google/clusterissuer.yaml
-apiVersion: certmanager.k8s.io/v1alpha1
-kind: ClusterIssuer
+apiVersion: cert-manager.io/v1alpha2
+kind: Issuer
 metadata:
   name: letsencrypt-prod
 spec:
@@ -9,4 +9,8 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-prod
-    http01: {}
+    solvers:
+    - selector: {}
+      http01:
+        ingress:
+          class: nginx

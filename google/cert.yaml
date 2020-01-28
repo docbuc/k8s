@@ -1,5 +1,5 @@
 # Datei: k8s/google/cert.yaml
-apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
   name: dockerbuch-diary-cert
@@ -17,4 +17,3 @@ spec:
         ingress: frontend-ingress
       domains:
       - k8s-diary.dockerbuch.info
-

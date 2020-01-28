@@ -38,16 +38,16 @@ services:
     ports:
       - 6379
     image: redis:5-alpine
-  frontend:
-    restart: always
-    build: frontend
-    image: docbuc/mwafe:2
-    depends_on:
-      - api
-    ports:
-      - "80:8080"
-    labels:
-      kompose.service.type: nodeport
+  # frontend:
+  #   restart: always
+  #   build: frontend
+  #   image: docbuc/mwafe:2
+  #   depends_on:
+  #     - api
+  #   ports:
+  #     - "80:8080"
+  #   labels:
+  #     kompose.service.type: nodeport
 volumes:
   mongovol1:
   mongovol2:

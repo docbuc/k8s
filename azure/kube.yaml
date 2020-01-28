@@ -5,7 +5,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: api
@@ -25,7 +25,7 @@ items:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
       kompose.service.type: LoadBalancer
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: frontend
@@ -45,7 +45,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: mongo1
@@ -64,7 +64,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: mongo2
@@ -83,7 +83,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: mongo3
@@ -102,7 +102,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: redis
@@ -121,7 +121,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: api
@@ -131,6 +131,9 @@ items:
     strategy: {}
     template:
       metadata:
+        annotations:
+          kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
+          kompose.version: 1.19.0 (f63a961c)
         creationTimestamp: null
         labels:
           io.kompose.service: api
@@ -152,7 +155,7 @@ items:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
       kompose.service.type: LoadBalancer
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: frontend
@@ -162,6 +165,10 @@ items:
     strategy: {}
     template:
       metadata:
+        annotations:
+          kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
+          kompose.service.type: LoadBalancer
+          kompose.version: 1.19.0 (f63a961c)
         creationTimestamp: null
         labels:
           io.kompose.service: frontend
@@ -179,7 +186,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: mongo1
@@ -190,6 +197,9 @@ items:
       type: Recreate
     template:
       metadata:
+        annotations:
+          kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
+          kompose.version: 1.19.0 (f63a961c)
         creationTimestamp: null
         labels:
           io.kompose.service: mongo1
@@ -231,7 +241,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: mongo2
@@ -242,6 +252,9 @@ items:
       type: Recreate
     template:
       metadata:
+        annotations:
+          kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
+          kompose.version: 1.19.0 (f63a961c)
         creationTimestamp: null
         labels:
           io.kompose.service: mongo2
@@ -283,7 +296,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: mongo3
@@ -294,6 +307,9 @@ items:
       type: Recreate
     template:
       metadata:
+        annotations:
+          kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
+          kompose.version: 1.19.0 (f63a961c)
         creationTimestamp: null
         labels:
           io.kompose.service: mongo3
@@ -335,7 +351,7 @@ items:
   metadata:
     annotations:
       kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
-      kompose.version: 1.18.0 (06a2e56)
+      kompose.version: 1.19.0 (f63a961c)
     creationTimestamp: null
     labels:
       io.kompose.service: redis
@@ -345,6 +361,9 @@ items:
     strategy: {}
     template:
       metadata:
+        annotations:
+          kompose.cmd: kompose convert -f docker-compose.yml -o kube.yaml
+          kompose.version: 1.19.0 (f63a961c)
         creationTimestamp: null
         labels:
           io.kompose.service: redis
