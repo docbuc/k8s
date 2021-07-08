@@ -3,38 +3,38 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.19.0 (f63a961c)
+    kompose.version: 1.22.0 (955b78124)
   creationTimestamp: null
   labels:
     io.kompose.service: influx
   name: influx
 spec:
   replicas: 1
-  strategy: {}
   selector:
     matchLabels:
       io.kompose.service: influx
+  strategy: {}
   template:
     metadata:
       annotations:
         kompose.cmd: kompose convert
-        kompose.version: 1.19.0 (f63a961c)
+        kompose.version: 1.22.0 (955b78124)
       creationTimestamp: null
       labels:
         io.kompose.service: influx
     spec:
       containers:
-      - env:
-        - name: INFLUXDB_DB
-          value: telegraf
-        - name: INFLUXDB_USER
-          value: telegraf
-        - name: INFLUXDB_USER_PASSWORD
-          value: iijineeZ9iet
-        image: influxdb
-        name: influx
-        ports:
-        - containerPort: 8086
-        resources: {}
+        - env:
+            - name: INFLUXDB_DB
+              value: telegraf
+            - name: INFLUXDB_USER
+              value: telegraf
+            - name: INFLUXDB_USER_PASSWORD
+              value: iijineeZ9iet
+          image: influxdb
+          name: influx
+          ports:
+            - containerPort: 8086
+          resources: {}
       restartPolicy: Always
 status: {}

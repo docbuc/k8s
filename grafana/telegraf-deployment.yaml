@@ -3,29 +3,29 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.19.0 (f63a961c)
+    kompose.version: 1.22.0 (955b78124)
   creationTimestamp: null
   labels:
     io.kompose.service: telegraf
   name: telegraf
 spec:
   replicas: 1
-  strategy: {}
   selector:
     matchLabels:
       io.kompose.service: telegraf
+  strategy: {}
   template:
     metadata:
       annotations:
         kompose.cmd: kompose convert
-        kompose.version: 1.19.0 (f63a961c)
+        kompose.version: 1.22.0 (955b78124)
       creationTimestamp: null
       labels:
         io.kompose.service: telegraf
     spec:
       containers:
-      - image: docbuc/telegraf:2
-        name: telegraf
-        resources: {}
+        - image: docbuc/telegraf:2
+          name: telegraf
+          resources: {}
       restartPolicy: Always
 status: {}
