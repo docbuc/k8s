@@ -1,16 +1,15 @@
 # Datei: k8s/google/clusterissuer.yaml
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt-prod
 spec:
   acme:
-    email: 'info@dockerbuch.info'
+    email: info@dockerbuch.info
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
-    - selector: {}
-      http01:
+    - http01:
         ingress:
           class: nginx

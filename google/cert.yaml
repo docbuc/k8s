@@ -1,5 +1,5 @@
 # Datei: k8s/google/cert.yaml
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: dockerbuch-diary-cert
@@ -11,9 +11,6 @@ spec:
   commonName: k8s-diary.dockerbuch.info
   dnsNames:
   - k8s-diary.dockerbuch.info
-  acme:
-    config:
-    - http01:
-        ingress: frontend-ingress
-      domains:
-      - k8s-diary.dockerbuch.info
+  issuerRef:
+    name: letsencrypt-prod
+    kind: Issuer
