@@ -1,14 +1,18 @@
-# Datei: k8s/google/ingress-tls.yaml
-apiVersion: extensions/v1beta1
+# Datei: k8s/google/ingress.yaml
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: frontend-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
-  backend:
-    serviceName: frontend
-    servicePort: 80
   tls:
-  - secretName: dockerbuch-diary-cert
-    hosts:
+  - hosts:
     - k8s-diary.dockerbuch.info
-
+    secretName: k8s-diary-certificates
+  defaultBackend:
+    service:
+      name: frontend
+      port:
+        number: 80
