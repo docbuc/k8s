@@ -41,6 +41,10 @@ spec:
               value: dockerbuch
           image: influxdb:2.7
           name: influx
+          ports:
+            - containerPort: 8086
+              hostPort: 8086
+              protocol: TCP
           resources: {}
       restartPolicy: Always
 status: {}
