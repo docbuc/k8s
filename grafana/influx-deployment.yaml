@@ -3,11 +3,12 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.22.0 (955b78124)
+    kompose.version: 1.30.0 (9d8dcb518)
   creationTimestamp: null
   labels:
     io.kompose.service: influx
   name: influx
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -18,23 +19,28 @@ spec:
     metadata:
       annotations:
         kompose.cmd: kompose convert
-        kompose.version: 1.22.0 (955b78124)
+        kompose.version: 1.30.0 (9d8dcb518)
       creationTimestamp: null
       labels:
+        io.kompose.network/grafana-default: "true"
         io.kompose.service: influx
     spec:
       containers:
         - env:
-            - name: INFLUXDB_DB
-              value: telegraf
-            - name: INFLUXDB_USER
-              value: telegraf
-            - name: INFLUXDB_USER_PASSWORD
-              value: iijineeZ9iet
-          image: influxdb
+            - name: DOCKER_INFLUXDB_INIT_ADMIN_TOKEN
+              value: gahPae6deivo0aenooy7thoheewaex9eeNgaePah8dee5io6neewooSe3bemu9gi
+            - name: DOCKER_INFLUXDB_INIT_BUCKET
+              value: dockerbuch
+            - name: DOCKER_INFLUXDB_INIT_MODE
+              value: setup
+            - name: DOCKER_INFLUXDB_INIT_ORG
+              value: dockerbuch
+            - name: DOCKER_INFLUXDB_INIT_PASSWORD
+              value: geheimgeheim
+            - name: DOCKER_INFLUXDB_INIT_USERNAME
+              value: dockerbuch
+          image: influxdb:2.7
           name: influx
-          ports:
-            - containerPort: 8086
           resources: {}
       restartPolicy: Always
 status: {}

@@ -3,11 +3,12 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.22.0 (955b78124)
+    kompose.version: 1.30.0 (9d8dcb518)
   creationTimestamp: null
   labels:
     io.kompose.service: telegraf
   name: telegraf
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -18,13 +19,21 @@ spec:
     metadata:
       annotations:
         kompose.cmd: kompose convert
-        kompose.version: 1.22.0 (955b78124)
+        kompose.version: 1.30.0 (9d8dcb518)
       creationTimestamp: null
       labels:
+        io.kompose.network/grafana-default: "true"
         io.kompose.service: telegraf
     spec:
       containers:
-        - image: docbuc/telegraf:2
+        - env:
+            - name: INFLUXDB_BUCKET
+              value: dockerbuch
+            - name: INFLUXDB_ORG
+              value: dockerbuch
+            - name: INFLUXDB_TOKEN
+              value: gahPae6deivo0aenooy7thoheewaex9eeNgaePah8dee5io6neewooSe3bemu9gi
+          image: docbuc/telegraf:4
           name: telegraf
           resources: {}
       restartPolicy: Always

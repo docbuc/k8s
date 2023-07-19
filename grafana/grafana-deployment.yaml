@@ -3,11 +3,12 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.22.0 (955b78124)
+    kompose.version: 1.30.0 (9d8dcb518)
   creationTimestamp: null
   labels:
     io.kompose.service: grafana
   name: grafana
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -18,19 +19,22 @@ spec:
     metadata:
       annotations:
         kompose.cmd: kompose convert
-        kompose.version: 1.22.0 (955b78124)
+        kompose.version: 1.30.0 (9d8dcb518)
       creationTimestamp: null
       labels:
+        io.kompose.network/grafana-default: "true"
         io.kompose.service: grafana
     spec:
       containers:
         - env:
             - name: GF_SECURITY_ADMIN_PASSWORD
               value: geheim
-          image: docbuc/grafana:2
+          image: docbuc/grafana:4
           name: grafana
           ports:
             - containerPort: 3000
+              hostPort: 3000
+              protocol: TCP
           resources: {}
       restartPolicy: Always
 status: {}
